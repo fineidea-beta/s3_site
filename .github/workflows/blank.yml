@@ -28,7 +28,7 @@ jobs:
       - name: Install tidy
         run: sudo apt install tidy
 
-      - name: Run tests
+      - name: Run html tests
         run: cd $GITHUB_WORKSPACE/tests && python3 -u test_html_syntax.py
 
       - name: Configure AWS Credentials
