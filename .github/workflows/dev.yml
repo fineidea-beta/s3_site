@@ -28,8 +28,8 @@ jobs:
       - name: Install tidy
         run: sudo apt install tidy
 
-      - name: GIT_USER
-        run: echo $GIT_USER
+      - name: GITHUB_CONTEXT
+        run: echo $GITHUB_CONTEXT
 
       - name: Run html tests
         run: cd $GITHUB_WORKSPACE/tests && python3 -u test_html_syntax.py
