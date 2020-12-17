@@ -1,4 +1,8 @@
 import os
 
-os.system("echo Hello from the other side!")
-os.system("echo $GITHUB_WORKSPACE")
+for filename in os.listdir("$GITHUB_WORKSPACE"):
+    if filename.endswith(".asm") or filename.endswith(".py"):
+        print(os.path.join(directory, filename))
+        # continue
+    else:
+        continue
