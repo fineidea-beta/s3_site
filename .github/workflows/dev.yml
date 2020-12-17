@@ -28,6 +28,9 @@ jobs:
       - name: Install tidy
         run: sudo apt install tidy
 
+      - name: GITHUB_ACTOR
+        run: echo $GITHUB_ACTOR
+
       - name: Run html tests
         run: cd $GITHUB_WORKSPACE/tests && python3 -u test_html_syntax.py
 
