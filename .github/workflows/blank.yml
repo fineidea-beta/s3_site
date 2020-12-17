@@ -25,22 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - name: Print GITHUB_WORKSPACE
         run: echo $GITHUB_WORKSPACE
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-      - name: test
-        run: |
-          echo test
+      - name: Run tests
+        run: cd $GITHUB_WORKSPACE/tests && python3 test_html_syntax.py
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -48,7 +37,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      # - name: Build static site
-      #   run: yarn install && npm run-script build
+
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./src/ s3://fineidea.space/stage --delete
