@@ -28,6 +28,9 @@ jobs:
       - name: Print GITHUB_WORKSPACE
         run: echo $GITHUB_WORKSPACE
 
+      - name: Print GITHUB_WORKSPACE
+        run: echo $GITHUB_WORKSPACE
+
       - name: Run tests
         run: cd $GITHUB_WORKSPACE/tests && python3 test_html_syntax.py
 
