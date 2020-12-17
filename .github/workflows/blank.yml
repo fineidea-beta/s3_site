@@ -38,6 +38,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: test
+        run: |
+          echo test
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
