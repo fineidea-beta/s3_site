@@ -28,8 +28,8 @@ jobs:
       - name: Install tidy
         run: sudo apt install tidy
 
-      - name: GITHUB_ACTOR
-        run: echo $GITHUB_ACTOR
+      - name: GIT_USER
+        run: echo $GIT_USER
 
       - name: Run html tests
         run: cd $GITHUB_WORKSPACE/tests && python3 -u test_html_syntax.py
@@ -42,4 +42,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./src/ s3://fineidea.space/stage --delete
+        run: aws s3 sync ./src/ s3://fineidea.space/dev --delete
