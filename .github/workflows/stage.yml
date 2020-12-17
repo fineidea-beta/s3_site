@@ -5,10 +5,10 @@ name: stage
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  pull_request:
-    branches: ["develop"]
-  push:
-    branches: ["develop"]
+  # pull_request:
+  #   branches: ["develop"]
+  # push:
+  #   branches: ["develop"]
   workflow_run:
     workflows: ["dev"]
     # branches: [main]
